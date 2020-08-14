@@ -25,3 +25,7 @@ featureCounts -a $gtf -F GTF -t CDS -g gene_id -o $OUTDir/CDS.txt *[12].bam
 echo
 echo "Building tables for transcript feature using featureCounts"
 featureCounts -a $gtf -F GTF -t transcript -g gene_id -o $OUTDir/transcript.txt *[12].bam
+
+echo
+echo "All featureCounts tables were built!"
+echo
