@@ -1,11 +1,10 @@
 #!/bin/bash
-cd /home/mafalda/Projects/InesBatista_MSc/minimapOUT
 
 echo ===============================================================
 echo "                 Building HTSeq-count Tables"
 echo ===============================================================
 
-set -uxe -o pipefail 
+#set -uxe -o pipefail 
 #-ue: by setting both -e and -u, the script will exit on an Error or 
 #if an Unset variable is referenced.
 #-x: Print a trace of simple commands and their arguments after they 
@@ -18,30 +17,37 @@ set -uxe -o pipefail
 
 ## 0. Storing args as vars
 miniData=$1 #Give a Directory where is stored minimapOUT data
-gtf=$2
+gff=$2
 OUTDir=$3
 
-#OUTF=`basename "$miniData"`
 
 #0.1. Needed Scripts
-tableScript="/home/mafalda/Projects/InesBatista_MSc/Scripts/HTSeq-count.sh"
+countScript=$HOME"/Documents/MASTER/Scripts/HTSeq-count.sh"
 
 
 ## 1. Output dir
-#OUTDir="home/mafalda/Projects/InesBatista_MSc/htseqOUT/"$OUTF"/"
 mkdir -p $OUTDir
 
 
 ## 2. HTSeq-count tables:
-#[2DO] It is doing a table for each sam file and we want one table per version (12 .SAM files)
-
-#for version in ` ls $miniData `; do #V1, V2, V3
-#	echo "Storing .sam files from $version"
-#	files="$(find $miniData/$version/*.sam)"
-#	echo $files
-#	OUTDir=$OUTDir$version"/"
-#	mkdir -p $OUTDir
 cd $miniData
-files="$(find $miniData/*.sam)"
-$tableScript $gtf $OUTDir $files 
-#done
+#SAMfiles="$(find *sam)"
+#$countScript $gff $OUTDir $SAMfiles 
+
+
+## 3. To get the unmapped reads from the BAM files:
+echo
+echo "Storing unmapped reads in unmapped.sam..."
+BAMfiles="$(find *[12].bam)"
+for file in $BAMfiles; do
+	samtools view -f 4 $file >> $OUTDir"unmapped.sam"
+done
+
+echo
+echo "Building the fastqc report of unmapped reads..." 
+fastqc $OUTDir"unmapped.sam" -o $OUTDir
+
+echo
+echo ===============================================================
+echo "                      Process Complete!"
+echo ===============================================================

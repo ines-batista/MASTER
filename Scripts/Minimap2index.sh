@@ -1,7 +1,8 @@
 #check for minimap2 index
 refGenome=$1
-idx=$refGenome.mmi
-#echo $idx
+idx=${refGenome/.fa.gz/.mmi}
+
+echo
 echo "Verifying if .mmi file exists..."
 if [ -f "$idx" ]; then
 	idxName="$(basename -- $idx)"
