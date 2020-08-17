@@ -1,0 +1,15 @@
+Status	ZF-B-1_1-Run1.bam	ZF-B-1_1-Run2.bam	ZF-B-2_2-Run1.bam	ZF-B-2_2-Run2.bam	ZF-B-3_3-Run1.bam	ZF-B-3_3-Run2.bam	ZF-I-1_1-Run1.bam	ZF-I-1_1-Run2.bam	ZF-I-2_2-Run1.bam	ZF-I-2_2-Run2.bam	ZF-I-3_3-Run1.bam	ZF-I-3_3-Run2.bam
+Assigned	1900	6981	29056	10816	31199	9146	10462	3812	22929	17526	19873	11658
+Unassigned_Unmapped	1116	2837	22706	6182	26115	8377	4724	1261	16461	25429	6575	8281
+Unassigned_Read_Type	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Singleton	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_MappingQuality	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Chimera	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_FragmentLength	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Duplicate	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_MultiMapping	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Secondary	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_NonSplit	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_NoFeatures	1673	8354	24666	14114	34396	15806	6432	3994	31587	41941	11812	18066
+Unassigned_Overlapping_Length	0	0	0	0	0	0	0	0	0	0	0	0
+Unassigned_Ambiguity	152	541	2381	770	2347	583	1633	556	2507	1454	2091	1130
