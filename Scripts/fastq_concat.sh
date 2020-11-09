@@ -52,3 +52,5 @@ cat barcode10.fastq >> ZF_RNAseq-B_1_1-1-1-RUN_RNAzeb.fastq
 cat barcode11.fastq >> ZF_RNAseq-B_2_2-1-1-RUN_RNAzeb.fastq
 cat barcode12.fastq >> ZF_RNAseq-B_3_3-1-1-RUN_RNAzeb.fastq
 
+rm barcode*
+
