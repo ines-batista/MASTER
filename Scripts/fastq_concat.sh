@@ -8,7 +8,7 @@
 # Set max wallclock time (max time which this job has to be executed. If not defined applies partition walltime)
 #SBATCH --time=10:00:00
 # Set name of job
-#SBATCH --job-name=ensembl_wget
+#SBATCH --job-name=fastq_concat
 # Mail alert at start, end and abortion of execution
 #SBATCH --mail-type=ALL
 # Send mail to this address
@@ -33,12 +33,12 @@ cd RUN30V3/
 
 cp -vp *{7,8,9,10,11,12}.fastq.gz ../all-reads
 cd ../all-reads
-mv barcode07.fastq.gz > ZF_RNAseq-I_1_1-1-1-RUN_RNAzeb.fastq.gz
-mv barcode08.fastq.gz > ZF_RNAseq-I_2_2-1-1-RUN_RNAzeb.fastq.gz
-mv barcode09.fastq.gz > ZF_RNAseq-I_3_3-1-1-RUN_RNAzeb.fastq.gz
-mv barcode10.fastq.gz > ZF_RNAseq-B_1_1-1-1-RUN_RNAzeb.fastq.gz
-mv barcode11.fastq.gz > ZF_RNAseq-B_2_2-1-1-RUN_RNAzeb.fastq.gz
-mv barcode12.fastq.gz > ZF_RNAseq-B_3_3-1-1-RUN_RNAzeb.fastq.gz
+mv barcode07.fastq.gz ZF_RNAseq-I_1_1-1-1-RUN_RNAzeb.fastq.gz
+mv barcode08.fastq.gz ZF_RNAseq-I_2_2-1-1-RUN_RNAzeb.fastq.gz
+mv barcode09.fastq.gz ZF_RNAseq-I_3_3-1-1-RUN_RNAzeb.fastq.gz
+mv barcode10.fastq.gz ZF_RNAseq-B_1_1-1-1-RUN_RNAzeb.fastq.gz
+mv barcode11.fastq.gz ZF_RNAseq-B_2_2-1-1-RUN_RNAzeb.fastq.gz
+mv barcode12.fastq.gz ZF_RNAseq-B_3_3-1-1-RUN_RNAzeb.fastq.gz
 gzip -d *.gz
 
 cd ../RUN30R2V3
